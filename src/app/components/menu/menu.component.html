@@ -1,0 +1,35 @@
+<menu>
+  <section>
+    <button routerLink="home" routerLinkActive="active">Home</button>
+    <button routerLink="streams" routerLinkActive="active">Streams</button>
+    <button routerLink="party" routerLinkActive="active">Party</button>
+    <button routerLink="premium" routerLinkActive="active">Premium</button>
+  </section>
+
+  <section>
+    <button class="logo" routerLink="home">
+      <p class="logo-text">Gamor</p>
+      <span class="logo-circle">&nbsp;</span>
+    </button>
+  </section>
+
+  <section>
+    <button (click)="changeTheme()">
+      @if (theme() === 'light') {
+        <img ngSrc="assets/images/dark_mode.png" width="36" height="36" priority="true" alt="dark_mode">
+      } @else {
+        <img ngSrc="assets/images/light_mode.png" width="36" height="36" priority="true" alt="light_mode">
+      }
+    </button>
+
+    @if (!user().email || !user().nick) {
+      <button class="sign-in" routerLink="sign-in">Sign in</button>
+      <button class="create-account">Create account</button>
+    } @else if (user()) {
+      <div class="login-menu">
+        <span [ngStyle]="{'background': user()?.logo?.color}" class="logo">{{ user()?.logo?.char }}</span>
+        <button class="log-out" (click)="logOut()">Log out</button>
+      </div>
+    }
+  </section>
+</menu>

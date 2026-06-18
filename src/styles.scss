@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "assets/styles/reset";
+@import "ngx-toastr/toastr";
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), url(assets/fonts/Inter/Inter-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tw Cen MT";
+  src: local("Tw Cen MT"), url(assets/fonts/TwCenMT/TwCenMTStd.otf) format("truetype");
+  font-display: swap;
+}

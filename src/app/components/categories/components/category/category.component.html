@@ -1,0 +1,11 @@
+<section>
+  <h3 class="bar">/</h3>
+
+  <div>
+    <h3 class="id">{{ category.id }}</h3>
+    <h3 class="name">{{ category.name }}</h3>
+    <img [ngSrc]="theme() === 'light' ? 'assets/images/arrow_right_black.png' : 'assets/images/arrow_right_white.png'"
+         class="symbol" width="36" height="36" alt=""/>
+    <img class="image" [ngSrc]="category.image" fill="true" alt=""/>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+:root {
+  --main-color: rgba(254, 254, 254, 1);
+  --secondary-color: rgba(18, 21, 26, 1);
+  --third-color: rgba(126, 52, 237, 1);
+  --fourth-color: rgba(237, 122, 55, 1);
+  --fifth-color: rgba(105, 46, 188, 1);
+  --body-color: rgba(249, 250, 252, 1);
+  --container-color: rgba(240, 241, 243, 1);
+  --account-button-color: rgba(254, 254, 254, 1);
+  --deg-color: rgba(249, 250, 252, .9);
+  --category-hover-color: rgba(237, 122, 55, .3);
+  --link-color: rgba(115, 116, 118, 1);
+  --error-color: rgba(234, 67, 53, 1);
+
+  --main-tipography: Inter, sans-serif;
+  --secondary-tipography: Tw Cen MT, sans-serif;
+}
+
+body.dark-theme {
+  --main-color: rgba(52, 59, 65, 1);
+  --secondary-color: rgba(254, 254, 254, 1);
+  --third-color: rgba(237, 122, 55, 1);
+  --fourth-color: rgba(126, 52, 237, 1);
+  --fifth-color: rgba(234, 116, 44, 1);
+  --body-color: rgba(31, 38, 46, 1);
+  --container-color: rgba(24, 31, 39, 1);
+  --account-button-color: rgba(54, 59, 65, 1);
+  --deg-color: rgba(31, 38, 46, .9);
+  --category-hover-color: rgba(126, 52, 237, .3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-moz-selection {
+  color: var(--main-color);
+  background-color: var(--secondary-color);
+}
+
+::selection {
+  color: var(--main-color);
+  background-color: var(--secondary-color);
+}
+
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-size: 100%;
+  font-family: var(--main-tipography);
+  color: var(--secondary-color);
+  background: var(--container-color);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

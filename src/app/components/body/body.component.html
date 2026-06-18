@@ -1,0 +1,85 @@
+<section>
+  <section class="left">
+    <h1>start <span class="streaming">streaming</span> games differently</h1>
+
+    <div>
+      <h3>gamor now has <span class="stream-party">stream party</span> platform</h3>
+
+      <img width="75" height="6" priority="true" alt="twisted_line"
+           [ngSrc]="theme() === 'light' ? 'assets/images/light_twisted_line.png' : 'assets/images/dark_twisted_line.png'"/>
+    </div>
+
+    @if (!user) {
+      <div class="buttons">
+        <button class="create-account">Create account</button>
+        <button class="sign-in" routerLink="/sign-in">Sign in</button>
+      </div>
+    }
+  </section>
+
+  <section class="center">
+    <h2 class="title">Fortnite New Season</h2>
+    <h3 class="subtitle">Join Live Stream</h3>
+
+    <div class="button-group">
+      <img class="add-person" ngSrc="assets/images/person_add.png" width="36" height="36" priority="true"
+           alt="add-person"/>
+      <h2 class="clock">{{ time() }}</h2>
+    </div>
+
+    <div class="party">
+      @for (onParty of onParty(); track onParty.id) {
+        <div [class]="$index % 2 === 0 ? 'party-left-logo' : 'party-right-logo'"
+             [ngStyle]="{'background': onParty.logo.color}">{{ onParty.logo.char }}
+        </div>
+      }
+    </div>
+
+    <img [ngSrc]="theme() === 'light' ? 'assets/images/light_image.png' : 'assets/images/dark_image.png'"
+         class="bg-image" fill="true" priority="true" alt="filter"/>
+  </section>
+
+  <section class="right">
+    <div class="options">
+      <h2>01. <span>Choose Platform</span></h2>
+
+      <div class="button-group" id="button-group">
+        <button class="selected" name="button-group" (click)="onSelected('party')" id="party">Party</button>
+        <button name="button-group" (click)="onSelected('match')" id="match">Matches</button>
+        <button name="button-group" (click)="onSelected('streams')" id="streams">Streams</button>
+      </div>
+    </div>
+
+    <div class="options">
+      <h2>02. <span>Searching Game</span></h2>
+
+      <form [formGroup]="searchForm" class="search">
+        <div class="filter-input">
+          <select id="select" class="select-game" formControlName="search">
+            <option value="">Select a game</option>
+            @for (game of games(); track game.id) {
+              <option [value]="game.name">{{ game.name }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="list">
+          @for (player of players(); track player.id) {
+            @if (!player.joined) {
+              <div class="list-item">
+                <span class="order">{{ $index + 1 }}</span>
+                <span class="name">{{ player.name }}</span>
+                <span [ngStyle]="{'background': player.logo.color}" class="logo">{{ player.logo.char }}</span>
+                <button class="add" (click)="addToParty(player)">+</button>
+              </div>
+            }
+          }
+        </div>
+
+        <button [disabled]="!searchForm.controls['search'].value" class="search-button" (click)="getPlayersByParams()">
+          Search Now
+        </button>
+      </form>
+    </div>
+  </section>
+</section>

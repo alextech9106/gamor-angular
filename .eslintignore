@@ -1,0 +1,11 @@
+package.json
+dist
+**/*.spec.ts
+yarn.lock
+documentation
+coverage
+.angular
+node_modules
+commitlint.config.js
+jest-setup.ts
+jest.config.ts

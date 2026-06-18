@@ -1,0 +1,14 @@
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+
+  app-body {
+    display: flex;
+    flex: 1;
+  }
+
+  @media(width < 1440px) {
+    gap: 7rem;
+  }
+}

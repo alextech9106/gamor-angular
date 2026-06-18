@@ -1,0 +1,28 @@
+<section>
+  <h1>Sign In</h1>
+  <h4>Sign in to enjoy all our services</h4>
+
+  <form [formGroup]="form">
+    <div class="input">
+      <input type="email" formControlName="email" placeholder="E-mail" class="p-1rem br-1rem form-text">
+      @if (form.controls['email'].touched && form.controls['email'].getError('required')) {
+        <span class="error">E-mail is required</span>
+      }
+      @if (form.controls['email'].touched && form.controls['email'].dirty && (form.controls['email'].hasError('email') || form.controls['email'].hasError('pattern'))) {
+        <span class="error">Enter a valid e-mail</span>
+      }
+    </div>
+
+    <div class="input">
+      <input type="password" formControlName="password" placeholder="Password" class="p-1rem br-1rem form-text">
+      @if (form.controls['password'].touched && form.controls['password'].getError('required')) {
+        <span class="error">Password is required</span>
+      }
+    </div>
+
+    <button (click)="signIn()">Sign In</button>
+  </form>
+
+  <p>Don't have an account? <span class="register">Register here</span></p>
+
+</section>

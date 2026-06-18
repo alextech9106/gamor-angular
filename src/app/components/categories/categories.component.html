@@ -1,0 +1,9 @@
+<section>
+  <h2 class="title">Trending Categories</h2>
+
+  <div class="categories">
+    @for (category of categories(); track category.id) {
+      <app-category [category]="category"/>
+    }
+  </div>
+</section>
